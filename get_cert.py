@@ -1,6 +1,6 @@
 import socket
 import ssl
-domain = "www.concordia.ca"
+from config import DOMAIN_TO_CHECK
 def get_certificate(hostname):
     #creates a wrapper that makes a scoket like object that can encrypt and decrypt ssl dat
     #allows acces to scoket method getpeercert(), which returns a dict of the certificate
@@ -11,4 +11,4 @@ def get_certificate(hostname):
     return certificate_info
 
 if __name__ == '__main__':
-    print(get_certificate(domain))
+    print(get_certificate(DOMAIN_TO_CHECK))
